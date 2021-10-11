@@ -4,18 +4,19 @@ const userAge = prompt("Quanti anni hai?")
 
 //calcolo costo della tratta 
 let costoTratta = parseInt(userKilometer) * 0.21 
+var costoTrattaDecimi = costoTratta.toFixed(2)
 
 //calcolo sconto 20% 
-let scontoMinorenni = costoTratta * 20 / 100
+let scontoMinorenni = costoTrattaDecimi * 20 / 100
 console.log(scontoMinorenni);
 
-const priceMinorenni = costoTratta - scontoMinorenni
+const priceMinorenni = costoTrattaDecimi - scontoMinorenni
 
 //calcolo sconto 40%
-let scontoOver = costoTratta * 40 / 100
+let scontoOver = costoTrattaDecimi * 40 / 100
 console.log(scontoOver);
 
-const priceOver = costoTratta - scontoOver
+const priceOver = costoTrattaDecimi - scontoOver
 
 
 
@@ -32,7 +33,7 @@ else if (userAge > 65) {
 }
 
 else if (userAge >= 18 && userAge <= 65) {
-    document.getElementById("risultato"). innerHTML = `il costo del tuo biglietto è ${costoTratta} €`
+    document.getElementById("risultato"). innerHTML = `il costo del tuo biglietto è ${costoTrattaDecimi} €`
 }
 
 
